@@ -1,0 +1,38 @@
+﻿@model GGProjectss.Models.Employee
+
+<div id="ex1" class="modal">
+    @using (Html.BeginForm("Create", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    {
+        @*<form method="post">*@
+        //if (ViewBag.Employeesss != null)
+        //{
+        @Html.HiddenFor(Model => Model.Id)
+        <div class="form-group">
+
+            <label for="Name">Name</label>
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Enter Title", @Required = "Required" })
+            @*<input type="text" class="form-control" name="Name" value="@e" id="Name" placeholder="Enter Name">*@
+
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="mail">Email address</label>
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Enter Title", @Required = "Required" })
+
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="address">Address</label>
+            @Html.TextBoxFor(model => model.Address, new { @class = "form-control", @placeholder = "Enter Title", @Required = "Required" })
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", @placeholder = "Enter Title", @Required = "Required" })
+        </div>
+        <br />
+        <button type="submit" id="btnsubmit" class="btn btn-primary">Submit</button>
+
+    }
+</div>
+
